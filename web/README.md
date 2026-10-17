@@ -114,3 +114,25 @@ Estas fases son hitos siguientes, no este release.
 3. `npm run build` → 13 rutas static, sin errores de tipos.
 4. `npm run lint` → clean.
 5. Lighthouse: Performance > 90, Accessibility > 95, SEO > 95.
+
+## Libro de Reclamaciones
+
+La web no tiene backend: el libro es el servicio compartido de Enigma,
+`https://libro.enigmasac.com/almorzando` (repo `enigmasac/libro-reclamaciones`;
+ahí se documenta dónde se guardan las hojas, el correlativo, los respaldos y
+cómo responde el proveedor desde `/admin`). El pie (`components/layout/Footer.tsx`)
+lleva la imagen del Anexo III (`public/marca/libro-reclamaciones-anexo-iii-v2.png`,
+no rediseñar) enlazada al libro y el enlace de texto «Libro de Reclamaciones».
+Faltan RUC, dirección y correo del titular: ver `docs/PENDIENTES.md` del repo
+del libro.
+
+## Despliegue
+
+Servidor `enigma`, `/home/enigmasac/domains/alomrzandope.enigmasac.com/app`
+(contenedor `almorzando-web`, `127.0.0.1:4112`, vhost de Virtualmin
+`alomrzandope.enigmasac.com`). El `docker-compose.yml` vive solo en el
+servidor (sin versionar). Redesplegar:
+
+```sh
+ssh enigma 'cd /home/enigmasac/domains/alomrzandope.enigmasac.com/app && sudo git pull --ff-only && sudo docker compose build 2>&1 | grep "Successfully tagged" && sudo docker compose up -d'
+```

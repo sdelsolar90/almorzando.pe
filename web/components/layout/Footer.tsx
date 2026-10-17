@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/Button";
 import { footerNavAbout, footerNavInfo } from "@/content/navigation";
 import { paymentMethods } from "@/content/company-logos";
 
+/** Libro de Reclamaciones virtual: servicio compartido de Enigma (repo enigmasac/libro-reclamaciones). */
+const libroReclamaciones = "https://libro.enigmasac.com/almorzando";
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -112,9 +115,42 @@ export function Footer() {
               </span>
             ))}
           </div>
-          <p className="text-xs text-arroz/50 font-mono">
-            © {year} almorzando.pe — Hecho en Lima
-          </p>
+          <div className="flex flex-col items-start gap-3 lg:items-end">
+            {/* Aviso del Libro de Reclamaciones para portales web: es la imagen
+                del Anexo III del Reglamento (DS 011-2011-PCM), redibujada en limpio y
+                fiel al modelo de Indecopi (fuente: clientes/hincha/docs/legal/*.svg).
+                Mismo texto, celeste y libro: no cambiar el diseño. Indecopi exige
+                respetar su formato (Res. 0221-2025/SPC) y que sea «legible y
+                visible» desde la página de inicio. El pie es oscuro, así que va
+                sobre una placa blanca en vez de recolorearla. El pie sale en
+                todas las páginas, inicio incluido. No reemplazar por un icono propio. */}
+            <a
+              href={libroReclamaciones}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit rounded-md bg-white p-1.5"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/marca/libro-reclamaciones-anexo-iii-v2.png"
+                alt="Libro de Reclamaciones"
+                width={1600}
+                height={880}
+                className="h-auto w-36"
+              />
+            </a>
+            <a
+              href={libroReclamaciones}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-arroz/70 underline underline-offset-2 hover:text-aji"
+            >
+              Libro de Reclamaciones
+            </a>
+            <p className="text-xs text-arroz/50 font-mono">
+              © {year} almorzando.pe — Hecho en Lima
+            </p>
+          </div>
         </Container>
       </div>
     </footer>
