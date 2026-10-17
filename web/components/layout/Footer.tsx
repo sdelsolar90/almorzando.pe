@@ -123,7 +123,9 @@ export function Footer() {
                 respetar su formato (Res. 0221-2025/SPC) y que sea «legible y
                 visible» desde la página de inicio. El pie es oscuro, así que va
                 sobre una placa blanca en vez de recolorearla. El pie sale en
-                todas las páginas, inicio incluido. No reemplazar por un icono propio. */}
+                todas las páginas, inicio incluido. No reemplazar por un icono propio.
+                Sin enlace de texto aparte: el aviso es solo la imagen (decisión
+                del 17/10/2026). */}
             <a
               href={libroReclamaciones}
               target="_blank"
@@ -138,14 +140,6 @@ export function Footer() {
                 height={880}
                 className="h-auto w-36"
               />
-            </a>
-            <a
-              href={libroReclamaciones}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-arroz/70 underline underline-offset-2 hover:text-aji"
-            >
-              Libro de Reclamaciones
             </a>
             <p className="text-xs text-arroz/50 font-mono">
               © {year} almorzando.pe — Hecho en Lima

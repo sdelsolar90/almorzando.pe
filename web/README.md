@@ -122,7 +122,8 @@ La web no tiene backend: el libro es el servicio compartido de Enigma,
 ahí se documenta dónde se guardan las hojas, el correlativo, los respaldos y
 cómo responde el proveedor desde `/admin`). El pie (`components/layout/Footer.tsx`)
 lleva la imagen del Anexo III (`public/marca/libro-reclamaciones-anexo-iii-v2.png`,
-no rediseñar) enlazada al libro y el enlace de texto «Libro de Reclamaciones».
+no rediseñar) enlazada al libro, con alt «Libro de Reclamaciones» y sin
+enlace de texto aparte (decisión del 17/10/2026).
 Faltan RUC, dirección y correo del titular: ver `docs/PENDIENTES.md` del repo
 del libro.
 
